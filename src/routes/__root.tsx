@@ -6,10 +6,10 @@ import { NotFoundPage } from '@/components/error-pages'
 
 import '../styles.css'
 
-const siteName = "Sweet O'Clock · Diwali Gifting Catalog 2026"
-const siteDescription =
-  'Homemade, handcrafted dry fruit laddu hampers from Nagpur. No refined sugar, no preservatives. Browse 15 Diwali 2026 gift hampers from ₹180.'
+const siteName = "Aai's Kitchen | Healthy Snacks"
 
+const siteDescription =
+  'Discover homemade Multigrain Sev, Masala Besan Sev and Mewa Laddu from Aai’s Kitchen, Nagpur. Explore our products and enquire on WhatsApp.'
 export const Route = createRootRoute({
   head: () => ({
     meta: [

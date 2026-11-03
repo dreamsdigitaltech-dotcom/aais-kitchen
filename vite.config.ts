@@ -4,14 +4,16 @@ import netlify from '@netlify/vite-plugin-tanstack-start'
 import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 const config = defineConfig({
-resolve: { tsconfigPaths: true },
-plugins: [
-tailwindcss(),
-tanstackStart(),
-netlify(),
-viteReact(),
-],
+  resolve: { tsconfigPaths: true },
+  plugins: [
+    tailwindcss(),
+    tanstackStart(),
+    ...(isProduction ? [netlify()] : []),
+    viteReact(),
+  ],
 })
 
 export default config

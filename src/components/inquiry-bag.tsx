@@ -64,11 +64,11 @@ export function InquiryBagSheet({
             </span>
             <div>
               <SheetTitle className="font-display text-2xl text-primary">
-                Festive Inquiry Bag
+                Shopping Cart
               </SheetTitle>
               <SheetDescription className="text-xs text-muted-foreground">
                 {items.length === 0
-                  ? 'Your bag is currently empty'
+                  ? 'Your cart is currently empty'
                   : `${totalCount} ${totalCount === 1 ? 'hamper' : 'hampers'} selected for enquiry`}
               </SheetDescription>
             </div>
@@ -81,18 +81,18 @@ export function InquiryBagSheet({
               <Sparkles className="size-8 text-gold" />
             </div>
             <h3 className="mt-4 font-display text-lg text-primary">
-              No hampers added yet
+              Your cart is empty
             </h3>
             <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-              Browse our Diwali 2026 collection and click &ldquo;Add to Inquiry
-              Bag&rdquo; to compile a list and order together on WhatsApp.
+              Explore Aai&apos;s Kitchen products and add your favourites
+              to the cart. You can send your product enquiry through WhatsApp.
             </p>
             <button
               type="button"
               onClick={() => onOpenChange(false)}
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90"
             >
-              Browse Diwali Hampers
+              Browse Our Products
             </button>
           </div>
         ) : (
@@ -154,8 +154,8 @@ export function InquiryBagSheet({
                               <Plus className="size-3" />
                             </button>
                           </div>
-                          <span className="text-sm font-semibold text-accent">
-                            {formatPrice(itemTotal)}
+                          <span className="text-sm font-semibold text-primary">
+                                Contact for Price
                           </span>
                         </div>
                       </div>
@@ -166,16 +166,14 @@ export function InquiryBagSheet({
             </div>
 
             <div className="border-t border-border pt-4">
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-muted-foreground">Estimated Total:</span>
-                <span className="font-display text-2xl font-semibold text-primary">
-                  {formatPrice(totalAmount)}
-                </span>
-              </div>
-              <p className="mt-1 text-[0.7rem] text-muted-foreground italic">
-                *Prices are indicative and subject to final customisation and
-                branding.
-              </p>
+              <div className="text-center">
+  <p className="font-display text-lg font-semibold text-primary">
+    Contact for Price
+  </p>
+  <p className="mt-1 text-xs text-muted-foreground">
+    Product prices and availability will be confirmed on WhatsApp.
+  </p>
+</div>
 
               <div className="mt-4 flex flex-col gap-2">
                 <a

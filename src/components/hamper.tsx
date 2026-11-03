@@ -18,6 +18,7 @@ import {
   catalog,
   cdn,
   contact,
+  enquiryMessage,
   formatPrice,
   whatsappLink,
   type Hamper,
@@ -134,29 +135,40 @@ export function HamperCard({
                 {hamper.options ? 'Starting from' : 'Indicative price'}
               </span>
               <div className="font-display text-xl font-semibold text-primary">
-                {formatPrice(hamper.price)}
+                Contact for Price
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
-              {onAddToBag && (
-                <button
-                  type="button"
-                  onClick={() => onAddToBag(hamper, hamper.options?.[0], 1)}
-                  title="Add to Festive Inquiry Bag"
-                  className="flex size-9 items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary transition hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-                >
-                  <ShoppingBag className="size-4" />
-                </button>
-              )}
-              <button
-                type="button"
-                onClick={onOpen}
-                className="rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground shadow-xs transition hover:bg-accent/90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-              >
-                View Details
-              </button>
-            </div>
+            <div className="flex flex-wrap items-center gap-2">
+  {onAddToBag && (
+    <button
+      type="button"
+      onClick={() => onAddToBag(hamper, hamper.options?.[0], 1)}
+      className="inline-flex items-center gap-1 rounded-full border border-primary px-3 py-2 text-xs font-semibold text-primary hover:bg-primary/5"
+    >
+      <ShoppingBag className="size-4" />
+      Add to Cart
+    </button>
+  )}
+
+  <button
+    type="button"
+    onClick={onOpen}
+    className="rounded-full bg-accent px-3 py-2 text-xs font-semibold text-accent-foreground hover:bg-accent/90"
+  >
+    View Details
+  </button>
+
+  <a
+    href={whatsappLink(enquiryMessage(hamper))}
+    target="_blank"
+    rel="noreferrer"
+    className="inline-flex items-center gap-1 rounded-full bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90"
+  >
+    <MessageCircle className="size-4" />
+    Buy Now
+  </a>
+</div>
           </div>
         </div>
       </div>
@@ -204,7 +216,7 @@ function HamperDetail({
   const specialBadge = getSpecialBadge(hamper.slug)
 
   const singleHamperEnquiry = whatsappLink(
-    `Hello Sweet O'Clock! 🪔\n\nI would like to enquire about ordering:\n*${hamper.name}*${option ? ` (${option.label} · ${option.weight})` : ''}\nQuantity: ${quantity}\nEstimated Price: ${formatPrice(totalPrice)}\n\nPlease let me know about availability and delivery in Nagpur. Thank you!`,
+    `Hello Aai's Kitchen! 🪔\n\nI would like to enquire about ordering:\n*${hamper.name}*${option ? ` (${option.label} · ${option.weight})` : ''}\nQuantity: ${quantity}\nEstimated Price: Contact for Price\n\nPlease let me know about availability and delivery in Nagpur. Thank you!`,
   )
 
   return (
@@ -225,7 +237,7 @@ function HamperDetail({
       <div className="flex flex-col gap-5 p-6 sm:p-8">
         <div>
           <p className="text-[0.7rem] tracking-[0.25em] text-gold uppercase">
-            Diwali 2026 · Catalog page {hamper.page}
+            Healthy Snacks · Catalog page {hamper.page}
           </p>
           <DialogTitle className="mt-2 font-script text-5xl leading-none font-normal text-primary">
             {hamper.name}
@@ -308,7 +320,7 @@ function HamperDetail({
             </button>
           </div>
           <span className="ml-auto font-display text-2xl font-semibold text-primary">
-            {formatPrice(totalPrice)}
+            Contact for Price
           </span>
         </div>
 

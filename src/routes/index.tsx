@@ -59,32 +59,36 @@ type SortOrder = 'price-asc' | 'price-desc' | 'page-asc'
 
 const instagramUrl = `https://instagram.com/${contact.instagram}`
 const generalEnquiry = whatsappLink(
-  "Hello Sweet O'Clock! I'd like to know more about your Diwali 2026 gift hampers.",
+  "Hello Aai's Kitchen! I'd like to know more about your Diwali 2026 gift hampers.",
 )
 const corporateEnquiry = whatsappLink(
-  "Hello Sweet O'Clock! 🪔 I'd like a quote for corporate / bulk Diwali gifting.",
+  "Hello Aai's Kitchen! 🪔 I'd like a quote for corporate / bulk Diwali gifting.",
 )
 
 const faqs = [
   {
-    q: 'How do I place an order for Diwali hampers?',
-    a: 'You can browse our collection here, add hampers to your Festive Inquiry Bag, or click "Enquire on WhatsApp" on any hamper. Orders and customisation details are finalised seamlessly with our team on WhatsApp or phone call.',
+    q: 'Which products are available at Aai’s Kitchen?',
+    a: "We currently offer three products: Multigrain Sev, Masala Besan Sev and Mewa Laddu. Explore our products section to see the available options.",
   },
   {
-    q: "What makes Sweet O'Clock laddus healthy and distinct?",
-    a: "Sweet O'Clock is founded by women Doctorates from agricultural backgrounds under Cosmos Greens, Nagpur. Every laddu is handmade in small batches using whole dry fruits and ingredients, with strictly zero refined sugar and zero chemical preservatives.",
+    q: 'How can I place an order?',
+    a: "You can click the Buy Now button on a product or contact us through WhatsApp at +91 9890122457. We will help you with your order enquiry.",
   },
   {
-    q: 'Can hampers be customised with preferred sweets or namkeens?',
-    a: 'Yes! Every hamper can be customised to your taste, dietary preferences, and budget. You can select your preferred laddu varieties, traditional namkeens (Chivda, Chakali, Mathari), dry fruits, and handcrafted Pichwai diyas.',
+    q: 'How can I know the product prices?',
+    a: "Please contact us on WhatsApp for the latest product prices and availability.",
   },
   {
-    q: 'Do you provide bulk corporate gifting and custom branding?',
-    a: 'Absolutely. We cater to bulk orders for corporate teams, client appreciation, and family events. Personalised greeting cards and corporate company branding are available upon request.',
+    q: 'Do you deliver outside Nagpur?',
+    a: "We currently accept delivery enquiries for Nagpur and nearby areas. Please contact us on WhatsApp to confirm delivery availability for your location.",
   },
   {
-    q: 'Where are your branches located in Nagpur, and do you deliver?',
-    a: "Sweet O'Clock is based in Nagpur with presence across Pannase Layout, Amravati Road, and Omkar Nagar. Orders can be picked up locally or delivered. Please message us on WhatsApp at +91 8265000818 to coordinate delivery.",
+    q: 'Can I ask about ingredients and product details?',
+    a: "Absolutely! Contact us on WhatsApp and we will help you with available product information, ingredients and other details.",
+  },
+  {
+    q: 'Can I customise my order?',
+    a: "Please contact us on WhatsApp to discuss your requirements and check whether customisation is available.",
   },
 ]
 
@@ -218,9 +222,8 @@ function Home() {
         <div className="mx-auto flex max-w-content items-center justify-center gap-2">
           <Sparkles className="size-3.5 text-gold shrink-0" />
           <span>
-            <strong className="text-gold">Diwali 2026 Gifting:</strong>{' '}
-            Handcrafted dry fruit laddu hampers in Nagpur. Zero refined sugar,
-            zero preservatives. Bespoke corporate &amp; family orders open!
+            <strong className="text-gold">Aai's Kitchen:</strong>{' '}
+            Homemade savouries and traditional laddus. Bringing delicious snacks to your family in Nagpur!
           </span>
           <a
             href={generalEnquiry}
@@ -240,109 +243,35 @@ function Home() {
       />
 
       <main>
-        {/* 3. Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-card/80 to-background pt-8 pb-16 sm:pt-14 sm:pb-24">
-          <div className="mx-auto grid max-w-content items-center gap-12 px-5 sm:px-8 md:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-gold/50 bg-gold/10 px-3.5 py-1 text-xs font-semibold tracking-[0.2em] text-primary uppercase">
-                <Sparkles className="size-3 text-gold" />
-                <span>{catalog.season} Festive Collection</span>
-              </div>
+        {/* 3. Aai's Kitchen Hero Banner */}
+<section className="overflow-hidden bg-[#fff4df]">
+  <div className="mx-auto max-w-[1600px]">
+    <img
+      src="/img/aais-kitchen-hero.png"
+      alt="Aai's Kitchen - Homemade Savouries and Laddus"
+      className="block h-auto w-full"
+      fetchPriority="high"
+    />
+  </div>
 
-              <h1 className="mt-6 font-display text-4xl leading-[1.1] font-normal text-primary sm:text-5xl lg:text-6xl">
-                Sweet O&apos;Clock
-                <span className="block font-script text-5xl sm:text-6xl lg:text-7xl text-accent">
-                  Diwali Gifting
-                </span>
-                <span className="block text-3xl sm:text-4xl lg:text-5xl">
-                  Catalog 2026
-                </span>
-              </h1>
+  <div className="flex flex-wrap justify-center gap-4 px-5 pb-10">
+    <a
+      href="#hampers"
+      className="rounded-full bg-[#791b27] px-8 py-3.5 text-sm font-semibold text-white shadow-md transition hover:bg-[#5f1420]"
+    >
+      Explore Our Products
+    </a>
 
-              <p className="mt-6 max-w-xl font-elegant text-xl leading-relaxed text-foreground/85 sm:text-2xl">
-                Homemade dry fruit laddus and artisanal festive hampers from
-                Nagpur. Handcrafted by women Doctorates in agricultural sciences
-                — {hampers.length} curated gifts from {formatPrice(lowest)} to{' '}
-                {formatPrice(highest)}.
-              </p>
-
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a
-                  href="#hampers"
-                  className="rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-md transition hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  Browse the Hampers ({hampers.length})
-                </a>
-                <a
-                  href={generalEnquiry}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-primary bg-card px-6 py-3.5 text-sm font-medium text-primary shadow-xs transition hover:bg-primary/5 focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  <MessageCircle className="size-4" /> Order on WhatsApp
-                </a>
-                <a
-                  href="/downloads/sweet-oclock-diwali-2026-catalog.pdf"
-                  download
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border px-5 py-3.5 text-sm text-muted-foreground transition hover:border-gold hover:text-primary"
-                >
-                  <Download className="size-4" /> Catalog PDF
-                </a>
-              </div>
-
-              {/* Verified Trust Badges */}
-              <div className="mt-10 grid grid-cols-2 gap-4 border-t border-border/80 pt-6 sm:grid-cols-4">
-                <div>
-                  <p className="font-display text-xl font-semibold text-primary">
-                    100%
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Refined Sugar Free
-                  </p>
-                </div>
-                <div>
-                  <p className="font-display text-xl font-semibold text-primary">
-                    Zero
-                  </p>
-                  <p className="text-xs text-muted-foreground">Preservatives</p>
-                </div>
-                <div>
-                  <p className="font-display text-xl font-semibold text-primary">
-                    3
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Nagpur Branches
-                  </p>
-                </div>
-                <div>
-                  <p className="font-display text-xl font-semibold text-primary">
-                    {formatPrice(lowest)}+
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Budget Options
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative mx-auto w-full max-w-md">
-              <div className="absolute -inset-2 rounded-2xl bg-gradient-to-tr from-gold/30 via-primary/10 to-accent/20 blur-xl" />
-              <figure className="relative border border-gold/70 bg-card p-3.5 shadow-[0_25px_60px_-20px_oklch(0.38_0.13_20/0.4)] transition md:rotate-[1.2deg] hover:rotate-0">
-                <img
-                  src={cdn('/img/cover.jpg', 900)}
-                  srcSet={`${cdn('/img/cover.jpg', 600)} 600w, ${cdn('/img/cover.jpg', 900)} 900w`}
-                  sizes="(min-width: 768px) 28rem, 100vw"
-                  alt="Sweet O'Clock Signature Box of assorted laddus surrounded by Diwali diyas"
-                  className="aspect-[4/5] w-full rounded-sm object-cover"
-                  fetchPriority="high"
-                />
-                <figcaption className="pt-3.5 pb-1 text-center font-display text-sm tracking-wide text-primary">
-                  Sweet O&apos;Clock Signature Box · Diwali 2026
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
+    <a
+      href={generalEnquiry}
+      target="_blank"
+      rel="noreferrer"
+      className="rounded-full border border-[#791b27] px-8 py-3.5 text-sm font-semibold text-[#791b27] transition hover:bg-[#791b27]/10"
+    >
+      Enquire on WhatsApp
+    </a>
+  </div>
+</section>
 
         {/* 4. Promise Strip */}
         <div className="border-y border-gold/50 bg-card/90 shadow-xs">
@@ -358,46 +287,46 @@ function Home() {
 
         {/* 5. Why Choose Sweet-O-Clock Section */}
         <section
-          id="why-us"
-          className="mx-auto max-w-content scroll-mt-20 px-5 py-20 sm:px-8"
-        >
-          <div className="text-center">
-            <p className="text-xs tracking-[0.35em] text-gold uppercase">
-              The Sweet O&apos;Clock Difference
-            </p>
-            <h2 className="mt-3 font-display text-3xl text-primary sm:text-4xl lg:text-5xl">
-              Nourishing Festivities, Crafted With Scientific Care
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl font-elegant text-lg text-foreground/80 sm:text-xl">
-              From our kitchen in Nagpur to your festive table, discover why
-              families and corporate organisations trust Sweet O&apos;Clock for
-              thoughtful Diwali gifting.
-            </p>
-          </div>
+  id="why-us"
+  className="mx-auto max-w-content scroll-mt-20 px-5 py-20 sm:px-8"
+>
+  <div className="text-center">
+    <p className="text-xs tracking-[0.35em] text-gold uppercase">
+      The Aai's Kitchen Difference
+    </p>
+    <h2 className="mt-3 font-display text-3xl text-primary sm:text-4xl lg:text-5xl">
+      Simple, Traditional & Made with Care
+    </h2>
+    <p className="mx-auto mt-4 max-w-2xl font-elegant text-lg text-foreground/80 sm:text-xl">
+      Discover delicious savouries and traditional treats from Aai's Kitchen.
+      Explore our selection of Multigrain Sev, Masala Besan Sev and Mewa Laddu,
+      prepared with care in Nagpur.
+    </p>
+  </div>
 
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <WhyUsCard
-              icon={Heart}
-              title="No Refined Sugar"
-              description="Naturally sweetened with dates, dry fruits, and honest wholesome ingredients. Wholesome for children, elders, and new mothers alike."
-            />
-            <WhyUsCard
-              icon={Award}
-              title="Agricultural Doctorates"
-              description="Founded in 2025 by women Doctorates from agricultural backgrounds under Cosmos Greens, ensuring strict quality control from farm to hamper."
-            />
-            <WhyUsCard
-              icon={Gift}
-              title="Artisanal Keepsakes"
-              description="Reusable wooden trays, handwoven rope baskets, and handcrafted Pichwai diyas designed to bring warmth beyond the festive season."
-            />
-            <WhyUsCard
-              icon={ShieldCheck}
-              title="Tailored Customisation"
-              description="Personalised greeting cards, bespoke corporate branding, and flexible hamper configurations tailored to your exact budget."
-            />
-          </div>
-        </section>
+  <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <WhyUsCard
+      icon={Heart}
+      title="Made with Care"
+      description="Every product is prepared with care to bring delicious snacks and traditional treats to your table."
+    />
+    <WhyUsCard
+      icon={Award}
+      title="Traditional Favourites"
+      description="Enjoy familiar Indian snack flavours and traditional treats from Aai's Kitchen."
+    />
+    <WhyUsCard
+      icon={Gift}
+      title="Something for Everyone"
+      description="Choose from savoury Multigrain Sev, Masala Besan Sev and delicious Mewa Laddu."
+    />
+    <WhyUsCard
+      icon={ShieldCheck}
+      title="Nagpur Delivery"
+      description="We accept enquiries for orders and delivery in Nagpur and nearby areas through WhatsApp."
+    />
+  </div>
+</section>
 
         {/* 6. Hampers Collection Section */}
         <section
@@ -565,8 +494,8 @@ function Home() {
             <div className="flex flex-col items-center text-center md:items-start md:text-left">
               <div className="rounded-full bg-background p-3 shadow-md">
                 <img
-                  src="/img/logo.png"
-                  alt="Sweet O'Clock logo"
+                  src="/img/Logo.jpeg"
+                  alt="Aai's Kitchen logo"
                   width={140}
                   height={126}
                   className="size-28 object-contain"
@@ -676,111 +605,53 @@ function Home() {
 
         {/* 10. Contact Section */}
         <section
-          id="contact"
-          className="scroll-mt-20 border-t border-border bg-card/60"
+  id="contact"
+  className="scroll-mt-20 border-t border-border bg-card/60"
+>
+  <div className="mx-auto max-w-content px-5 py-20 sm:px-8">
+    <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+      <div>
+        <p className="text-xs tracking-[0.35em] text-gold uppercase">
+          Connect With Aai&apos;s Kitchen
+        </p>
+        <h2 className="mt-2 font-display text-4xl text-primary sm:text-5xl">
+          Get in Touch
+        </h2>
+      </div>
+
+      <p className="max-w-md font-elegant text-xl text-foreground/80">
+        Have questions about our products or want to place an order?
+        We would love to hear from you.
+      </p>
+    </div>
+
+    <dl className="mt-12 grid gap-10 sm:grid-cols-2">
+      <ContactItem label="WhatsApp Orders & Enquiries">
+        <a
+          href={generalEnquiry}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2 hover:text-primary"
         >
-          <div className="mx-auto max-w-content px-5 py-20 sm:px-8">
-            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-              <div>
-                <p className="text-xs tracking-[0.35em] text-gold uppercase">
-                  Celebrate With Sweet O&apos;Clock
-                </p>
-                <h2 className="mt-2 font-display text-4xl text-primary sm:text-5xl">
-                  Get in Touch
-                </h2>
-              </div>
-              <p className="max-w-md font-elegant text-xl text-foreground/80">
-                {catalog.closingNote}
-              </p>
-            </div>
+          <MessageCircle className="size-4 text-gold shrink-0" />
+          <span>+91 9890122457</span>
+        </a>
+      </ContactItem>
 
-            <dl className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-              <ContactItem label="Phone Enquiries">
-                {contact.phones.map((p) => (
-                  <a
-                    key={p}
-                    href={`tel:+91${p}`}
-                    className="flex items-center gap-2 hover:text-primary"
-                  >
-                    <Phone className="size-4 text-gold shrink-0" />
-                    <span>+91 {p}</span>
-                  </a>
-                ))}
-              </ContactItem>
+      <ContactItem label="Our Location">
+        <span className="flex items-center gap-2 font-medium">
+          <MapPin className="size-4 text-gold shrink-0" />
+          <span>Nagpur, Maharashtra</span>
+        </span>
+        <span className="block text-xs text-muted-foreground">
+          Delivery enquiries for Nagpur and nearby areas.
+        </span>
+      </ContactItem>
+    </dl>
+  </div>
+</section>
 
-              <ContactItem label="WhatsApp Order">
-                <a
-                  href={generalEnquiry}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 hover:text-primary"
-                >
-                  <MessageCircle className="size-4 text-gold shrink-0" />
-                  <span>+91 {contact.whatsapp}</span>
-                </a>
-              </ContactItem>
-
-              <ContactItem label="Instagram">
-                <a
-                  href={instagramUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 hover:text-primary"
-                >
-                  <Camera className="size-4 text-gold shrink-0" />
-                  <span>@{contact.instagram}</span>
-                </a>
-              </ContactItem>
-
-              <ContactItem label="City & Locations">
-                <span className="flex items-center gap-2 font-medium">
-                  <MapPin className="size-4 text-gold shrink-0" />
-                  <span>{contact.city}, Maharashtra</span>
-                </span>
-                <span className="block text-xs text-muted-foreground">
-                  3 Pickup Points
-                </span>
-              </ContactItem>
-            </dl>
-
-            <div className="mt-12 border-t border-border pt-8">
-              <p className="text-xs tracking-[0.25em] text-gold uppercase">
-                Nagpur Branches
-              </p>
-              <div className="mt-4 flex flex-wrap gap-3">
-                {contact.branches.map((b) => (
-                  <span
-                    key={b}
-                    className="rounded-md border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-2xs"
-                  >
-                    📍 {b}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 11. Downloads Section */}
-        <section className="border-t border-border bg-muted/60">
-          <div className="mx-auto flex max-w-content flex-col gap-4 px-5 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-            <div>
-              <p className="font-display text-base text-primary">
-                Official Catalog &amp; Data Downloads
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Download the complete 18-page original Diwali 2026 PDF catalogue
-                or data files
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <DownloadLink href="/downloads/sweet-oclock-diwali-2026-catalog.pdf">
-                Catalog PDF (18 pgs)
-              </DownloadLink>
-              
-            </div>
-          </div>
-        </section>
+        
       </main>
 
       {/* 12. Rich Footer */}
@@ -790,117 +661,107 @@ function Home() {
             <div className="space-y-4 md:col-span-2">
               <div className="flex items-center gap-3">
                 <img
-                  src="/img/logo.png"
-                  alt="Sweet O'Clock"
+                  src="/img/Logo.jpeg"
+                  alt="Aai's Kitchen"
                   width={48}
                   height={44}
                   className="size-12 object-contain"
                 />
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-primary">
-                    Sweet O&apos;Clock
-                  </h3>
-                  <p className="text-xs text-muted-foreground">
-                    A brand of Cosmos Greens · Nagpur
-                  </p>
-                </div>
-              </div>
-              <p className="max-w-md font-elegant text-base leading-relaxed text-foreground/80">
-                Homemade dry fruit laddu brand founded in 2025 by women
-                Doctorates in agriculture. 100% natural, no refined sugar, no
-                preservatives.
-              </p>
-            </div>
+  <h3 className="font-display text-lg font-semibold text-primary">
+    Aai&apos;s Kitchen
+  </h3>
+  <p className="text-xs text-muted-foreground">
+    Healthy Snacks · Nagpur
+  </p>
+</div>
+</div>
+
+<p className="max-w-md font-elegant text-base leading-relaxed text-foreground/80">
+  Discover delicious savouries and traditional treats from Aai&apos;s
+  Kitchen. Explore our Multigrain Sev, Masala Besan Sev and Mewa Laddu,
+  made with care.
+</p>
+</div>
 
             <div>
-              <p className="text-xs font-semibold tracking-wider text-gold uppercase">
-                Quick Navigation
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <a href="#hampers" className="hover:text-primary">
-                    Diwali Hampers
-                  </a>
-                </li>
-                <li>
-                  <a href="#why-us" className="hover:text-primary">
-                    Why Sweet O&apos;Clock
-                  </a>
-                </li>
-                <li>
-                  <a href="#story" className="hover:text-primary">
-                    Our Story
-                  </a>
-                </li>
-                <li>
-                  <a href="#corporate" className="hover:text-primary">
-                    Corporate Gifting
-                  </a>
-                </li>
-                <li>
-                  <a href="#faq" className="hover:text-primary">
-                    FAQs
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact" className="hover:text-primary">
-                    Contact &amp; Branches
-                  </a>
-                </li>
-              </ul>
-            </div>
+  <p className="text-xs font-semibold tracking-wider text-gold uppercase">
+    Quick Navigation
+  </p>
+  <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+    <li>
+      <a href="#hampers" className="hover:text-primary">
+        Our Products
+      </a>
+    </li>
+    <li>
+      <a href="#why-us" className="hover:text-primary">
+        Why Choose Us
+      </a>
+    </li>
+    <li>
+      <a href="#story" className="hover:text-primary">
+        About Us
+      </a>
+    </li>
+    <li>
+      <a href="#faq" className="hover:text-primary">
+        FAQs
+      </a>
+    </li>
+    <li>
+      <a href="#contact" className="hover:text-primary">
+        Contact Us
+      </a>
+    </li>
+  </ul>
+</div>
 
             <div>
-              <p className="text-xs font-semibold tracking-wider text-gold uppercase">
-                Get in Touch
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <a
-                    href={generalEnquiry}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 hover:text-primary"
-                  >
-                    <MessageCircle className="size-4 text-gold" /> WhatsApp: +91{' '}
-                    {contact.whatsapp}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`tel:+91${contact.phones[0]}`}
-                    className="flex items-center gap-2 hover:text-primary"
-                  >
-                    <Phone className="size-4 text-gold" /> +91{' '}
-                    {contact.phones[0]}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={instagramUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 hover:text-primary"
-                  >
-                    <Camera className="size-4 text-gold" /> @{contact.instagram}
-                  </a>
-                </li>
-                <li className="pt-2 text-xs text-muted-foreground">
-                  Nagpur: Pannase Layout · Amravati Rd · Omkar Nagar
-                </li>
-              </ul>
-            </div>
+  <p className="text-xs font-semibold tracking-wider text-gold uppercase">
+    Get in Touch
+  </p>
+
+  <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+    <li>
+      <a
+        href={generalEnquiry}
+        target="_blank"
+        rel="noreferrer"
+        className="flex items-center gap-2 hover:text-primary"
+      >
+        <MessageCircle className="size-4 text-gold" />
+        WhatsApp: +91 9890122457
+      </a>
+    </li>
+
+    <li className="flex items-center gap-2">
+      <MapPin className="size-4 text-gold" />
+      Nagpur, Maharashtra
+    </li>
+
+    <li className="pt-1 text-xs">
+      Delivery enquiries for Nagpur and nearby areas.
+    </li>
+  </ul>
+</div>
           </div>
 
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
-            <span>
-              &copy; {new Date().getFullYear()} Sweet O&apos;Clock · All rights
-              reserved · Diwali 2026 Edition
-            </span>
-            <div className="flex flex-col items-center gap-2 sm:items-end"></div>
-            <span>Handcrafted with love </span>
-            <span> Powered by <strong className="text-foreground">Dreams Digital Technologies</strong> </span>
-          </div>
+  <span>
+    &copy; {new Date().getFullYear()} Aai&apos;s Kitchen · All rights
+    reserved.
+  </span>
+
+  <span>Handcrafted with love ❤️</span>
+
+  <span>
+    Powered by{" "}
+    <strong className="text-foreground">
+      Dreams Digital Technologies
+    </strong>
+  </span>
+</div>
         </div>
       </footer>
 
@@ -937,46 +798,44 @@ function SiteHeader({
       <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-5 py-3 sm:px-8">
         <a href="#" className="flex items-center gap-3">
           <img
-            src="/img/logo.png"
-            alt="Sweet O'Clock"
+            src="/img/Logo.jpeg"
+            alt="Aai's Kitchen"
             width={44}
             height={40}
             className="size-11 object-contain"
           />
           <div className="flex flex-col">
             <span className="text-xs font-semibold tracking-[0.25em] text-primary uppercase sm:text-sm">
-              Sweet O&apos;Clock
+              Aai&apos;s Kitchen
             </span>
             <span className="text-[0.65rem] tracking-wider text-gold uppercase">
-              Diwali Gifting 2026
+              Healthy Snacks
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 text-sm font-medium lg:flex">
-          <a href="#hampers" className="text-foreground/80 hover:text-primary">
-            Hampers
-          </a>
-          <a href="#why-us" className="text-foreground/80 hover:text-primary">
-            Why Us
-          </a>
-          <a href="#story" className="text-foreground/80 hover:text-primary">
-            Our Story
-          </a>
-          <a
-            href="#corporate"
-            className="text-foreground/80 hover:text-primary"
-          >
-            Corporate
-          </a>
-          <a href="#faq" className="text-foreground/80 hover:text-primary">
-            FAQs
-          </a>
-          <a href="#contact" className="text-foreground/80 hover:text-primary">
-            Contact
-          </a>
-        </nav>
+  <a href="#hampers" className="text-foreground/80 hover:text-primary">
+    Our Products
+  </a>
+
+  <a href="#why-us" className="text-foreground/80 hover:text-primary">
+    Why Choose Us
+  </a>
+
+  <a href="#story" className="text-foreground/80 hover:text-primary">
+    About Us
+  </a>
+
+  <a href="#faq" className="text-foreground/80 hover:text-primary">
+    FAQs
+  </a>
+
+  <a href="#contact" className="text-foreground/80 hover:text-primary">
+    Contact
+  </a>
+</nav>
 
         {/* Actions */}
         <div className="flex items-center gap-2">
@@ -988,7 +847,7 @@ function SiteHeader({
             title="Open Festive Inquiry Bag"
           >
             <ShoppingBag className="size-4" />
-            <span className="hidden sm:inline">Inquiry Bag</span>
+            <span className="hidden sm:inline">Cart</span>
             {bagItemCount > 0 && (
               <span className="flex size-5 items-center justify-center rounded-full bg-accent text-[0.65rem] font-bold text-accent-foreground">
                 {bagItemCount}
@@ -1028,16 +887,16 @@ function SiteHeader({
           <SheetHeader className="border-b border-border pb-4 text-left">
             <div className="flex items-center gap-3">
               <img
-                src="/img/logo.png"
-                alt="Sweet O'Clock"
+                src="/img/Logo.jpeg"
+                alt="Aai's Kitchen"
                 className="size-10 object-contain"
               />
               <div>
                 <SheetTitle className="font-display text-lg text-primary">
-                  Sweet O&apos;Clock
+                  Aai&apos;s Kitchen
                 </SheetTitle>
                 <p className="text-xs text-muted-foreground">
-                  Diwali Gifting 2026
+                  Healthy Snacks
                 </p>
               </div>
             </div>
@@ -1048,13 +907,13 @@ function SiteHeader({
               href="#hampers"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Diwali Hampers
+              Our Products
             </MobileNavLink>
             <MobileNavLink
               href="#why-us"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Why Sweet O&apos;Clock
+              Why Aai&apos;s Kitchen
             </MobileNavLink>
             <MobileNavLink
               href="#story"
