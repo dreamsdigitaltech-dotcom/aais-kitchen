@@ -755,12 +755,21 @@ function Home() {
 
   <span>Handcrafted with love ❤️</span>
 
-  <span>
+  
+<span>
+  <a
+    href="https://dreamsdigital.co.in/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-foreground hover:underline"
+  >
     Powered by{" "}
     <strong className="text-foreground">
       Dreams Digital Technologies
     </strong>
-  </span>
+  </a>
+</span>
+
 </div>
         </div>
       </footer>
