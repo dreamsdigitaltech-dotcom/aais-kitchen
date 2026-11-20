@@ -247,7 +247,7 @@ function Home() {
 <section className="overflow-hidden bg-[#fff4df]">
   <div className="mx-auto max-w-[1600px]">
     <img
-      src="/img/aais-kitchen-hero.png"
+      src="/img/sevfit-hero.png"
       alt="Aai's Kitchen - Homemade Savouries and Laddus"
       className="block h-auto w-full"
       fetchPriority="high"
